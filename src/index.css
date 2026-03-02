@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Sora:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-aria-bg: #050810;
+  --color-aria-card: rgba(10, 16, 35, 0.8);
+  --color-aria-cyan: #00D9FF;
+  --color-aria-purple: #7C3AED;
+  --color-aria-green: #00E5A0;
+  --color-aria-orange: #FF6B35;
+  --color-aria-text-main: #E2EEFF;
+  --color-aria-text-sub: #6B84A8;
+  --color-aria-text-dark: #2A3A55;
+  
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Sora", sans-serif;
+  --font-sans: "Noto Sans SC", sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-aria-bg);
+  color: var(--color-aria-text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 217, 255, 0.4);
+}
+
+/* Utility classes for specific Aurora effects */
+.aurora-text-shadow {
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+}
+
+.aurora-border-gradient {
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(var(--color-aria-card), var(--color-aria-card)) padding-box,
+    linear-gradient(135deg, rgba(0, 200, 255, 0.12), rgba(120, 80, 255, 0.12)) border-box;
+}
+
+.aurora-card-active {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.15), inset 0 0 20px rgba(0, 217, 255, 0.03);
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+.aurora-btn-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(0, 229, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 160, 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
